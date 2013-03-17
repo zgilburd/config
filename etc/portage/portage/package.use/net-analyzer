@@ -1,0 +1,7 @@
+net-analyzer/ncrack ssh
+net-analyzer/openvas-libraries restricted
+net-analyzer/wireshark gtk gcrypt
+net-analyzer/ettercap gtk
+net-analyzer/unicornscan 
+net-analyzer/nmap lua
+net-analyzer/rrdtool perl

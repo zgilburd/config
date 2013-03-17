@@ -1,0 +1,4 @@
+net-nntp/sabnzbd ~amd64
+#required by net-nntp/sabnzbd-0.6.15, required by sabnzbd (argument)
+dev-python/yenc ~amd64
+

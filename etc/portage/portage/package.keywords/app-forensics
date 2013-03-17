@@ -1,0 +1,7 @@
+app-forensics/examiner ~amd64
+app-forensics/scalpel ~amd64
+app-forensics/unhide ~amd64
+app-forensics/zzuf ~amd64
+app-forensics/mac-robber ~amd64
+
+

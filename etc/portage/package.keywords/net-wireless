@@ -1,0 +1,9 @@
+net-wireless/iwl6000-ucode ~amd64
+net-wireless/kismet-ubertooth ~amd64
+net-wireless/spectools ~amd64
+net-wireless/dedected ~amd64
+net-wireless/kismet-dect ~amd64
+net-wireless/blueman ~amd64
+net-wireless/rtl8192su-firmware ~amd64
+net-wireless/rtl8180 ~amd64
+

@@ -1,0 +1,5 @@
+# move app-emulation/qemu-kvm app-emulation/qemu
+app-emulation/qemu aio alsa ncurses sdl -curl -esd -fdt -gnutls -hardened -kvm-trace -pulseaudio -qemu-ifup -sasl -static -bluetooth vde
+dev-python/pycrpto gmp
+net-misc/vde ssl pcap
+app-emulation/libvirt lvm nfs pcap qemu -lxc

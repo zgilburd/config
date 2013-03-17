@@ -1,0 +1,4 @@
+app-crypt/truecrypt ~amd64
+app-crypt/fcrackzip ~amd64
+app-crypt/SIPcrack ~amd64
+app-crypt/gnupg ~amd64

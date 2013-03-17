@@ -1,0 +1,3 @@
+=sys-boot/os-prober-1.47 ~amd64
+=sys-boot/efibootmgr-0.5.4 ~amd64
+=sys-boot/grub-1.99-r2 **
