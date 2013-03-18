@@ -1,0 +1,306 @@
+!-----------------------------------------------------------------------------
+! appearance
+!-----------------------------------------------------------------------------
+
+
+! enable colors in native X applications
+#ifdef COLOR
+*customization                : -color
+#endif
+
+! use the Human cursor theme from Ubuntu
+Xcursor.theme                 : gentoo
+
+! choose color scheme to use in terminals
+!#define use_xoria256_terminal_color_scheme
+!#define use_zenburn_terminal_color_scheme
+#define use_tomorrow_terminal_color_scheme
+
+!-----------------------------------------------------------------------------
+! URxvt
+!-----------------------------------------------------------------------------
+
+! interaction
+URxvt*saveLines               : 2000
+URxvt*iso14755                : False
+URxvt*iso14755_52             : False
+URxvt*scrollTtyOutput         : True
+URxvt*scrollTtyKeypress       : True
+URxvt*scrollWithBuffer        : False
+URxvt*fading                  : 26
+
+! emulate ATerm for proper recognition of key combinations in Vim
+!URxvt*keysym.Up              : \033[A  !breaks arrow keys in Vim
+!URxvt*keysym.Down            : \033[B  !breaks arrow keys in Vim
+!URxvt*keysym.Right           : \033[C  !breaks arrow keys in Vim
+!URxvt*keysym.Left            : \033[D  !breaks arrow keys in Vim
+!URxvt*keysym.Page_Up         : \033[5~ !breaks scrolling in URxvt
+!URxvt*keysym.Page_Down       : \033[6~ !breaks scrolling in URxvt
+!URxvt*keysym.Home            : \033[H 
+!URxvt*keysym.End             : \033[F
+URxvt*keysym.S-Up             : \033[1;2A
+URxvt*keysym.S-Down           : \033[1;2B
+URxvt*keysym.S-Right          : \033[1;2C
+URxvt*keysym.S-Left           : \033[1;2D
+!URxvt*keysym.S-Page_Up       : \033[5$
+!URxvt*keysym.S-Page_Down     : \033[6$
+URxvt*keysym.S-Home           : \033[1;2H
+URxvt*keysym.S-End            : \033[1;2F
+URxvt*keysym.M-Up             : \033[1;3A
+URxvt*keysym.M-Down           : \033[1;3B
+URxvt*keysym.M-Right          : \033[1;3C
+URxvt*keysym.M-Left           : \033[1;3D
+URxvt*keysym.M-Page_Up        : \033[5;3~
+URxvt*keysym.M-Page_Down      : \033[6;3~
+URxvt*keysym.M-Home           : \033[1;3H
+URxvt*keysym.M-End            : \033[1;3F
+URxvt*keysym.M-S-Up           : \033[1;4A
+URxvt*keysym.M-S-Down         : \033[1;4B
+URxvt*keysym.M-S-Right        : \033[1;4C
+URxvt*keysym.M-S-Left         : \033[1;4D
+!URxvt*keysym.M-S-Page_Up     : captured by terminal for scrolling
+!URxvt*keysym.M-S-Page_Down   : captured by terminal for scrolling
+URxvt*keysym.M-S-Home         : \033[1;4H
+URxvt*keysym.M-S-End          : \033[1;4F
+URxvt*keysym.C-Up             : \033[1;5A
+URxvt*keysym.C-Down           : \033[1;5B
+URxvt*keysym.C-Right          : \033[1;5C
+URxvt*keysym.C-Left           : \033[1;5D
+URxvt*keysym.C-Page_Up        : \033[5;5~
+URxvt*keysym.C-Page_Down      : \033[6;5~
+URxvt*keysym.C-Home           : \033[1;5H
+URxvt*keysym.C-End            : \033[1;5F
+URxvt*keysym.C-S-Up           : \033[1;6A
+URxvt*keysym.C-S-Down         : \033[1;6B
+URxvt*keysym.C-S-Right        : \033[1;6C
+URxvt*keysym.C-S-Left         : \033[1;6D
+!URxvt*keysym.C-S-Page_Up     : \033[5;5~
+!URxvt*keysym.C-S-Page_Down   : \033[6;5~
+URxvt*keysym.C-S-Home         : \033[1;6H
+URxvt*keysym.C-S-End          : \033[1;6F
+URxvt*keysym.M-C-Up           : \033[1;7A
+URxvt*keysym.M-C-Down         : \033[1;7B
+URxvt*keysym.M-C-Right        : \033[1;7C
+URxvt*keysym.M-C-Left         : \033[1;7D
+URxvt*keysym.M-C-Page_Up      : \033[5;7~
+URxvt*keysym.M-C-Page_Down    : \033[6;7~
+URxvt*keysym.M-C-Home         : \033[1;7H
+URxvt*keysym.M-C-End          : \033[1;7F
+URxvt*keysym.M-C-S-Up         : \033[1;8A
+URxvt*keysym.M-C-S-Down       : \033[1;8B
+URxvt*keysym.M-C-S-Right      : \033[1;8C
+URxvt*keysym.M-C-S-Left       : \033[1;8D
+!URxvt*keysym.M-C-S-Page_Up   : \033[5;7~
+!URxvt*keysym.M-C-S-Page_Down : \033[6;7~
+URxvt*keysym.M-C-S-Home       : \033[1;8H
+URxvt*keysym.M-C-S-End        : \033[1;8F
+
+! appearance
+URxvt*font                    : xft:monospace:pixelsize=11
+URxvt*scrollbar 							: false
+URxvt*scrollBar_right         : True
+URxvt*scrollBar_floating      : True
+URxvt*scrollstyle             : plain
+
+! extensions
+URxvt*perl-ext-common         : default,matcher
+URxvt*url-launcher             : /usr/bin/chromium
+URxvt*matcher.button          : 2
+URxvt*colorUL: #4682B4
+
+!-----------------------------------------------------------------------------
+! xoria256 terminal color scheme
+! http://snk.tuxfamily.org/log/xoria256-terminal-color-scheme.html
+#ifdef use_xoria256_terminal_color_scheme
+
+!black.normal                 : xoria256.LineNr.guibg
+!black.bright                 : black.normal.rgb - 8
+#define _color0                 #121212
+#define _color8                 #0a0a0a
+
+!red.normal                   : red.bright.r - 8
+!red.bright                   : xoria256.Special.guifg
+#define _color1                 #d78787
+#define _color9                 #df8787
+
+!green.normal                 : green.bright.g - 8
+!green.bright                 : xoria256.PreProc.guifg
+#define _color2                 #afd787
+#define _color10                #afdf87
+
+!yellow.normal                : yellow.bright.rg - 8
+!yellow.bright                : xoria256.Special.guifg
+#define _color3                 #f7f7af
+#define _color11                #ffffaf
+
+!blue.normal                  : blue.bright.b - 8
+!blue.bright                  : xoria256.Statement.guifg
+#define _color4                 #87afd7
+#define _color12                #87afdf
+
+!magenta.normal               : magenta.bright.rb - 8
+!magenta.bright               : xoria256.Identifier.guifg
+#define _color5                 #d7afd7
+#define _color13                #dfafdf
+
+!cyan.normal                  : cyan.bright.gb - 8
+!cyan.bright                  : green.bright + blue.bright
+#define _color6                 #afd7d7
+#define _color14                #afdfdf
+
+!white.normal                 : white.bright.rgb - 8
+!white.bright                 : xoria256.Folded.guifg
+#define _color7                 #e6e6e6
+#define _color15                #eeeeee
+
+!bold                         : xoria256.Type.guifg
+!underline                    : xoria256.htmlValue.guifg
+#define _colorBD                #afafdf
+#define _colorUL                #dfdfaf
+
+!foreground                   : xoria256.Normal.guifg
+!background                   : xoria256.Normal.guibg
+!cursorColor                  : xoria256.Cursor.guibg
+#define _foreground             #d0d0d0
+#define _background             #1c1c1c
+#define _cursorColor            #ffaf00
+
+#endif
+!-----------------------------------------------------------------------------
+
+!-----------------------------------------------------------------------------
+! Zenburn terminal color scheme
+! http://snk.tuxfamily.org/log/zenburn-terminal-color-scheme.html
+#ifdef use_zenburn_terminal_color_scheme
+
+!BLK Cursor
+#define _color0                 #000d18
+#define _color8                 #000d18
+
+!RED Tag
+#define _color1                 #e89393
+#define _color9                 #e89393
+
+!GRN SpecialKey
+#define _color2                 #9ece9e
+#define _color10                #9ece9e
+
+!YEL Keyword
+#define _color3                 #f0dfaf
+#define _color11                #f0dfaf
+
+!BLU Number
+#define _color4                 #8cd0d3
+#define _color12                #8cd0d3
+
+!MAG Precondit
+#define _color5                 #c0bed1
+#define _color13                #c0bed1
+
+!CYN Float
+#define _color6                 #dfaf8f
+#define _color14                #dfaf8f
+
+!WHT Search
+#define _color7                 #efefef
+#define _color15                #efefef
+
+!FMT Include, StatusLine, ErrorMsg
+#define _colorIA                #80d4aa
+#define _colorBD                #ffcfaf
+#define _colorUL                #ccdc90
+
+!TAT Normal, Normal, Cursor
+#define _foreground             #dcdccc
+#define _background             #1f1f1f
+#define _cursorColor            #8faf9f
+
+#endif
+!-----------------------------------------------------------------------------
+
+!-----------------------------------------------------------------------------
+! Tomorrow terminal color scheme
+! http://snk.tuxfamily.org/log/tomorrow-terminal-color-scheme.html
+#ifdef use_tomorrow_terminal_color_scheme
+
+! BLK
+#define _color0                 #000000
+#define _color8                 #666666
+
+! RED
+! TomorrowNightEighties.t_red
+#define _color1                 #f2777a
+#define _color9                 _color1
+
+! GRN
+! TomorrowNightEighties.t_green
+#define _color2                 #99cc99
+#define _color10                _color2
+#define _colorIA                #80d4aa
+
+! YEL
+! TomorrowNight.t_orange
+#define _color3                 #de935f
+! TomorrowNight.t_yellow
+#define _color11                #f0c674
+
+! BLU
+! TomorrowNight.t_blue
+#define _color4                 #81a2be
+#define _color12                _color4
+
+! MAG
+! TomorrowNightEighties.t_purple
+#define _color5                 #cc99cc
+#define _color13                _color5
+
+! CYN
+! TomorrowNightEighties.t_aqua(hue,value) + TomorrowNight.t_aqua(saturation)
+#define _color6                 #94CCCC
+#define _color14                _color6
+
+! WHT
+! TomorrowNightEighties.t_selection
+#define _color7                 #515151
+! TomorrowNightEighties.t_current_line
+#define _color15                #393939
+
+! FMT
+#define _colorBD                _color11
+#define _colorUL                _color6
+
+! TAT
+! TomorrowNightEighties.t_foreground
+#define _foreground             #cccccc
+! TomorrowNightEighties.t_background
+#define _background             #2d2d2d
+#define _cursorColor            #aeafad
+
+#endif
+!-----------------------------------------------------------------------------
+
+URxvt*color0                  : _color0
+URxvt*color1                  : _color1
+URxvt*color2                  : _color2
+URxvt*color3                  : _color3
+URxvt*color4                  : _color4
+URxvt*color5                  : _color5
+URxvt*color6                  : _color6
+URxvt*color7                  : _color7
+URxvt*color8                  : _color8
+URxvt*color9                  : _color9
+URxvt*color10                 : _color10
+URxvt*color11                 : _color11
+URxvt*color12                 : _color12
+URxvt*color13                 : _color13
+URxvt*color14                 : _color14
+URxvt*color15                 : _color15
+URxvt*colorBD                 : _colorBD
+URxvt*colorIA                 : _colorIA
+URxvt*colorUL                 : _colorUL
+URxvt*foreground              : _foreground
+URxvt*background              : _background
+URxvt*cursorColor             : _cursorColor
+URxvt*transparent: true
+! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
+URxvt*shading: 110
