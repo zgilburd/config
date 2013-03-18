@@ -16,6 +16,7 @@ setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -e
+EDITOR=vim
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -48,6 +49,8 @@ bindkey "^[[5~" history-beginning-search-backward
 bindkey "^[[6~" history-beginning-search-forward
 bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
+bindkey '^[[7~' beginning-of-line
+bindkey '^[[8~' end-of-line
 
 
 # set a pretty term title
