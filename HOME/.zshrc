@@ -51,6 +51,7 @@ bindkey ';5D' emacs-backward-word
 bindkey ';5C' emacs-forward-word
 bindkey '^[[7~' beginning-of-line
 bindkey '^[[8~' end-of-line
+bindkey '^[[3~' delete-char
 
 
 # set a pretty term title
