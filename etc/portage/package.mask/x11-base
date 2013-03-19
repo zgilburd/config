@@ -1,0 +1,2 @@
+# masking until vmware compositing is fixed in the 1.14 tree
+>=x11-base/xorg-server-1.14.0
