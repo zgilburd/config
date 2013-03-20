@@ -1,0 +1,1 @@
+*/5 * * * * root ntpdate us.pool.ntp.org >/dev/null 2>&1
