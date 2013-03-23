@@ -1,5 +1,6 @@
 net-misc/networkmanage bluetooth connection-sharing dhclient dhcpcd
 net-misc/dropbox librsync-bundled
 net-misc/unison gtk
+net-misc/spice-gtk -gstreamer
 net-misc/tor tor-hardening
 

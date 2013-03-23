@@ -1,1 +1,2 @@
-app-emulation/libvirt python
+app-emulation/libvirt python virt-network
+app-emulation/qemu pulseaudio smartcard spice

@@ -1,4 +1,5 @@
 # Set up the prompt
+eval `keychain --eval`
 alias rk='eval `keychain --eval`'
 alias ls='ls --color=auto'
 
