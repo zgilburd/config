@@ -104,7 +104,7 @@ URxvt*scrollstyle             : plain
 
 ! extensions
 URxvt*perl-ext-common         : default,matcher
-URxvt*url-launcher             : /usr/bin/chromium
+URxvt*url-launcher             : /usr/bin/google-chrome
 URxvt*matcher.button          : 2
 URxvt*colorUL: #4682B4
 
@@ -303,4 +303,4 @@ URxvt*background              : _background
 URxvt*cursorColor             : _cursorColor
 URxvt*transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*shading: 110
+URxvt*shading: 30
