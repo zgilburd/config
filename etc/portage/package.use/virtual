@@ -1,1 +1,3 @@
 virtual/udev gudev hwdb
+>=virtual/jpeg-0 static-libs
+

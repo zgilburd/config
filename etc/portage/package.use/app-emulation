@@ -1,2 +1,2 @@
 app-emulation/libvirt python virt-network
-app-emulation/qemu pulseaudio smartcard spice
+app-emulation/qemu smartcard spice usbredir virtfs xattr pulseaudio

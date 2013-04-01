@@ -1,3 +1,9 @@
 media-libs/gd fontconfig
 media-libs/mesa gbm gles2 shared-dricore gallium llvm xorg xa -osmesa nptl 
 media-libs/libcanberra gnome 
+>=media-libs/libjpeg-turbo-1.2.90 static-libs
+>=media-libs/libpng-1.5.14 static-libs
+>=media-libs/libmng-1.0.10-r1 static-libs
+>=media-libs/lcms-1.19:0 static-libs
+>=media-libs/freetype-2.4.11-r2 static-libs
+

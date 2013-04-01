@@ -42,7 +42,7 @@ prompt_physosvcs_setup () {
 
   local -A pc
 
-  pc['user']=${1:-'green'}
+	pc['user']=${1:-'green'}
   pc['time']=${2:-'white'}
   pc['pwd']=${3:-'blue'}
   pc['com']=${4:-'none'}

@@ -1,5 +1,4 @@
 # Set up the prompt
-eval `keychain --eval`
 alias rk='eval `keychain --eval`'
 alias ls='ls --color=auto'
 
@@ -11,7 +10,15 @@ autoload -Uz promptinit compinit vcs_info
 
 setopt prompt_subst
 promptinit
-prompt physosvcs
+if [ ${UID} = 0 ]; then
+	prompt physosvcs red
+else
+	prompt physosvcs
+	if [[ ${HOST} =~ "^.*\.zh\.local" ]]; then
+		eval `keychain --eval`
+	fi
+fi
+
 
 setopt histignorealldups sharehistory
 
