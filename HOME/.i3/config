@@ -12,6 +12,7 @@ for_window [class="java-lang-Thread"] border enable
 for_window [window_role="pop-up"] floating enable
 assign [title="Buddy List"] 5
 for_window [title="Buddy List"] floating enable
+for_window [title="LUVC*"] floating enable
 for_window [class="gvncviewer"] border none
 
 workspace "1" output DP2
