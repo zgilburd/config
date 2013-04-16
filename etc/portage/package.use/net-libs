@@ -1,3 +1,4 @@
 net-libs/ptlib wav
 net-libs/opal sip
 net-libs/farstream -introspection -msn upnp
+net-libs/opal sipim
