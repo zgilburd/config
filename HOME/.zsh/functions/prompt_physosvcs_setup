@@ -1,6 +1,10 @@
 # physos ZSH prompt theme by <rainer@physos.com>
 # 
+# Modified by Zack to improve usability on multi-host environments.  Also, I've
+# extended the timestamps because I tend to leave terminals open with long-
+# running commands.
 #
+
 prompt_physosvcs_help () {
   cat <<'EOH'
 
@@ -85,7 +89,7 @@ prompt_physosvcs_setup () {
 
   }
 # %F{$pc['colour']} to allow for color configuration
-  PROMPT="%F{$pc['user']}[%n@%m]%F{$pc['time']}[%T]%f$prompt_newline%F{$pc['pwd']}[%~/] %# %F{$pc['com']}"
+  PROMPT="%F{$pc['user']}[%n@%2m]%F{$pc['time']}[%*/%D]%f$prompt_newline%F{$pc['pwd']}[%3c/] %# %F{$pc['com']}"
 
 # Use %_ to show why you are in a continued prompt
   PROMPT2="%F{$pc['pwd']}%_> %F{$pc['com']}"
