@@ -27,3 +27,7 @@ colorscheme Tomorrow-Night
 "hi LineNR ctermfg=180 guifg=#d7af87
 filetype on
 autocmd FileType yaml setlocal expandtab
+
+set formatoptions+=w
+set tw=80
+nnoremap Q gqip
