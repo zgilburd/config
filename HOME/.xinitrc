@@ -1,12 +1,9 @@
-~/.screenlayout/default.sh &
+/home/zgilburd/.screenlayout/disable.sh &
 xrdb -remove ~/.Xresources &
 xrdb -merge ~/.Xresources &
 dropbox &
-/home/zgilburd/.screenlayout/disable.sh &
-/home/zgilburd/.screenlayout/2mon.sh &
-vmware-user &
-pidgin &
 ~/.screenlayout/default.sh &
+pidgin &
 ~/bin/lockremove-checker.sh &
 nitrogen --restore &
 exec i3
