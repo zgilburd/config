@@ -1,3 +1,4 @@
 x11-libs/wxGTK unicode X
 x11-libs/libdrm libkms
 x11-libs/cairo qt4 xcb 
+>=x11-libs/libdrm-2.4.44 video_cards_intel video_cards_radeon

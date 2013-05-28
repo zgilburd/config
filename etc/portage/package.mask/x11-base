@@ -1,0 +1,3 @@
+#legacy driver....
+>=x11-base/xorg-server-1.13.9
+>=x11-base/xorg-drivers-1.14

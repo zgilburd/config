@@ -4,29 +4,28 @@ focus_follows_mouse no
 set $mod Mod4
 
 for_window [class="wine"] floating enable
-for_window [class="Gimp"] floating enable
-for_window [class="Gimp"] border normal
+for_window [class="Gimp"] floating enable; border normal
 for_window [class="Virt-manager"] floating enable
-for_window [class="java-lang-Thread"] floating enable
-for_window [class="java-lang-Thread"] border enable
+for_window [class="java-lang-Thread"] floating enable; border enable
 for_window [window_role="pop-up"] floating enable
-assign [title="Buddy List"] 5
-for_window [title="Buddy List"] floating enable
 for_window [title="LUVC*"] floating enable
 for_window [class="gvncviewer"] border none
-for_window [class="ekiga"] floating enable
-for_window [class="ekiga"] border none
+for_window [class="ekiga"] floating enable; border none
+for_window [class="hl2_linux"] floating disable; fullscreen enable; move window to workspace cstrike; border none
+for_window [title="Buddy List"] floating enable
+for_window [class="mupdf"] floating enable
+assign [title="Buddy List"] 5
 
-workspace "1" output DP2
-workspace "3" output DP2
-workspace "5" output DP2
-workspace "7" output DP2
+workspace "1" output DFP11
+workspace "3" output DFP11
+workspace "5" output DFP11
+workspace "7" output DFP11
 
-workspace "2" output HDMI1
-workspace "4" output HDMI1
-workspace "6" output HDMI1
-workspace "8" output HDMI1
-workspace "10" output HDMI1
+workspace "2" output DFP10
+workspace "4" output DFP10
+workspace "6" output DFP10
+workspace "8" output DFP10
+workspace "cstrike" output DFP10
 
 #                       border  background  text
 client.focused           #a99c87 #6a5d47 #f8f8f8
@@ -118,7 +117,9 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+0 workspace cstrike
+bindsym $mod+z workspace prev_on_output
+bindsym $mod+x workspace next_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace 1

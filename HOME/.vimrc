@@ -25,7 +25,8 @@ syntax on
 set t_Co=256
 colorscheme Tomorrow-Night
 "hi LineNR ctermfg=180 guifg=#d7af87
-filetype on
+filetype on 
+filetype indent on
 autocmd FileType yaml setlocal expandtab
 
 set formatoptions+=w

@@ -7,3 +7,4 @@ media-libs/libcanberra gnome
 >=media-libs/lcms-1.19:0 static-libs
 >=media-libs/freetype-2.4.11-r2 static-libs
 
+=media-libs/libsdl-2.0.0_pre7046 abi_x86_32
