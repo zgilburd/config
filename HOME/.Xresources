@@ -21,6 +21,7 @@ Xcursor.theme                 : gentoo
 !-----------------------------------------------------------------------------
 
 ! interaction
+URxvt*urgentOnBell: true
 URxvt*saveLines               : 2000
 URxvt*iso14755                : False
 URxvt*iso14755_52             : False
