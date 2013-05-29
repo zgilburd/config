@@ -17,15 +17,27 @@ for_window [class="mupdf"] floating enable
 assign [title="Buddy List"] 5
 
 workspace "1" output DFP11
+workspace "2" output DFP11
 workspace "3" output DFP11
+workspace "4" output DFP11
 workspace "5" output DFP11
+workspace "6" output DFP11
 workspace "7" output DFP11
+workspace "8" output DFP11
+workspace "9" output DFP11
+workspace "10" output DFP11
 
-workspace "2" output DFP10
-workspace "4" output DFP10
-workspace "6" output DFP10
-workspace "8" output DFP10
-workspace "cstrike" output DFP10
+workspace "21" output DFP10
+workspace "22" output DFP10
+workspace "23" output DFP10
+workspace "24" output DFP10
+workspace "25" output DFP10
+workspace "26" output DFP10
+workspace "27" output DFP10
+workspace "28" output DFP10
+workspace "29" output DFP10
+workspace "00" output DFP10
+
 
 #                       border  background  text
 client.focused           #a99c87 #6a5d47 #f8f8f8
@@ -117,9 +129,19 @@ bindsym $mod+6 workspace 6
 bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace cstrike
-bindsym $mod+z workspace prev_on_output
-bindsym $mod+x workspace next_on_output
+bindsym $mod+0 workspace 10
+bindsym $mod+Ctrl+1 workspace 21
+bindsym $mod+Ctrl+2 workspace 22
+bindsym $mod+Ctrl+3 workspace 23
+bindsym $mod+Ctrl+4 workspace 24
+bindsym $mod+Ctrl+5 workspace 25
+bindsym $mod+Ctrl+6 workspace 26
+bindsym $mod+Ctrl+7 workspace 27
+bindsym $mod+Ctrl+8 workspace 28
+bindsym $mod+Ctrl+9 workspace 29
+bindsym $mod+Ctrl+0 workspace 00
+bindsym $modz workspace prev_on_output
+bindsym $modx workspace next_on_output
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move workspace 1
@@ -132,9 +154,20 @@ bindsym $mod+Shift+ampersand move workspace 7
 bindsym $mod+Shift+asterisk move workspace 8
 bindsym $mod+Shift+parenleft move workspace 9
 bindsym $mod+Shift+parenright move workspace 10
+bindsym $mod+Ctrl+Shift+exclam move workspace 21
+bindsym $mod+Ctrl+Shift+at move workspace 22
+bindsym $mod+Ctrl+Shift+numbersign move workspace 23
+bindsym $mod+Ctrl+Shift+dollar move workspace 24
+bindsym $mod+Ctrl+Shift+percent move workspace 25
+bindsym $mod+Ctrl+Shift+asciicircum move workspace 26
+bindsym $mod+Ctrl+Shift+ampersand move workspace 27
+bindsym $mod+Ctrl+Shift+asterisk move workspace 28
+bindsym $mod+Ctrl+Shift+parenleft move workspace 29
+bindsym $mod+Ctrl+Shift+parenright move workspace 00
 
 # reload the configuration file
 bindsym $mod+Shift+C reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+R restart
 # exit i3 (logs you out of your X session)
