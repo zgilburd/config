@@ -1,4 +1,6 @@
 dev-libs/libgcrypt static-libs
+#required by bitcoin-qt for some odd reason
+dev-libs/leveldb -snappy
 dev-libs/popt static-libs
 dev-libs/libgpg-error static-libs
 dev-libs/libxml2 icu

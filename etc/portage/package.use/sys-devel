@@ -1,1 +1,1 @@
-sys-devel/gcc objc
+sys-devel/gcc objc gcj objc++ objc-gc regression-test go

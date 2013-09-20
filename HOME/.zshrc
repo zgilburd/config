@@ -1,8 +1,18 @@
+TERM=xterm
 # Set up the prompt
 alias rk='eval `keychain --eval`'
 alias ls='ls --color=auto'
+alias rgrep='egrep -rHni'
+# i work in bootstrap too much :(
+alias cdbg='cd ~/git/bootstrap'
+# i reload profiles too much
+alias rldp='. ~/.zshrc'
+alias rbbs='cdbg && make clean; make build && make bootstrap && jekyll build; cd -'
+alias cal='cal -3'
+alias isotoday='date +%Y%m%d'
 
-export PATH=~/bin:$PATH
+export REPORTTIME="10"
+export PATH=~/bin:~/.gem/ruby/1.8/bin/:~/localapps/bin:$PATH
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
 
@@ -27,8 +37,8 @@ bindkey -e
 EDITOR=vim
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -64,10 +74,11 @@ bindkey '^[[3~' delete-char
 
 # set a pretty term title
 case $TERM in
-    rxvt*)
-          precmd () {vcs_info; print -Pn "\033]0;%n@%m: %~\007"}
-          ;;
-    xterm*)
-          precmd () {print -Pn "e]0;%n@%m: %~a"}
-          ;;
+	rxvt*)
+		precmd () {vcs_info; print -Pn "\033]0;%n@%m: %~\007"}
+	;;
+	xterm*)
+    precmd () {vcs_info; print -Pn "\e]0;%n@%m: %~\007"}
+	;;
 esac
+alias parestart="ps auxw|grep pulseaudio |awk '{print }' | head -n1 | xargs kill; pulseaudio --start --log-target=syslog"

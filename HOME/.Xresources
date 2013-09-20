@@ -25,9 +25,9 @@ URxvt*urgentOnBell: true
 URxvt*saveLines               : 2000
 URxvt*iso14755                : False
 URxvt*iso14755_52             : False
-URxvt*scrollTtyOutput         : True
-URxvt*scrollTtyKeypress       : True
-URxvt*scrollWithBuffer        : False
+URxvt*scrollTtyOutput         : False
+URxvt*scrollTtyKeypress       : False
+URxvt*scrollWithBuffer        : True
 URxvt*fading                  : 26
 
 ! emulate ATerm for proper recognition of key combinations in Vim

@@ -3,18 +3,20 @@ exec "export AWT_TOOLKIT=XToolkit"
 focus_follows_mouse no
 set $mod Mod4
 
+for_window [class="(?i)conky"] floating enable border none
 for_window [class="wine"] floating enable
-for_window [class="Gimp"] floating enable; border normal
-for_window [class="Virt-manager"] floating enable
-for_window [class="java-lang-Thread"] floating enable; border enable
+for_window [class="Gimp"] floating enable border normal
+for_window [class="(?i)virt-manager"] floating enable
+for_window [class="java-lang-Thread"] floating enable border enable
 for_window [window_role="pop-up"] floating enable
-for_window [title="LUVC*"] floating enable
+for_window [title="(?i)luvc*"] floating enable
 for_window [class="gvncviewer"] border none
 for_window [class="ekiga"] floating enable; border none
-for_window [class="hl2_linux"] floating disable; fullscreen enable; move window to workspace cstrike; border none
-for_window [title="Buddy List"] floating enable
-for_window [class="mupdf"] floating enable
-assign [title="Buddy List"] 5
+for_window [class="hl2_linux"] move window to workspace 00 border none fullscreen enable
+for_window [title="Buddy List"] floating enable assign 5
+for_window [class="meld"] floating enable
+for_window [class="Skype"] floating enable assign 5
+for_window [class="Pidgin"] floating enable
 
 workspace "1" output DFP11
 workspace "2" output DFP11

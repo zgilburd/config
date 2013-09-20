@@ -3,5 +3,4 @@ net-misc/dropbox librsync-bundled
 net-misc/unison gtk
 net-misc/spice-gtk -gstreamer usbredir  -policykit
 net-misc/tor tor-hardening
-
-net-misc/cgminer scrypt
+net-misc/cgminer scrypt opencl

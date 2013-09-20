@@ -1,2 +1,2 @@
-app-emulation/libvirt python virt-network
-app-emulation/qemu smartcard spice usbredir virtfs xattr pulseaudio
+app-emulation/libvirt python virt-network fuse avahi
+app-emulation/qemu smartcard spice usbredir virtfs xattr glusterfs pulseaudio sasl systemtap tls curl fdt

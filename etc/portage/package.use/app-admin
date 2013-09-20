@@ -1,2 +1,3 @@
 app-admin/conky audacious curl hddtemp iostats thinkpad rss mpd weather-metar weather-xoap wifi lua lua-cairo lua-imlib
 app-admin/keepass aot
+app-admin/eselect-php fpm

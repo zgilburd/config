@@ -2,8 +2,9 @@
 xrdb -remove ~/.Xresources &
 xrdb -merge ~/.Xresources &
 dropbox &
+thunar --daemon &
 ~/.screenlayout/default.sh &
 pidgin &
 ~/bin/lockremove-checker.sh &
 nitrogen --restore &
-exec i3
+exec ck-launch-session i3
