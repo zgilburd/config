@@ -1,2 +1,3 @@
 app-emulation/libvirt python virt-network fuse avahi
 app-emulation/qemu smartcard spice usbredir virtfs xattr glusterfs pulseaudio sasl systemtap tls curl fdt
+app-emulation/spice client sasl

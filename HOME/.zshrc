@@ -1,4 +1,5 @@
 TERM=xterm
+alias dpcm='dbus-launch pcmanfm'
 # Set up the prompt
 alias rk='eval `keychain --eval`'
 alias ls='ls --color=auto'
@@ -24,7 +25,7 @@ if [ ${UID} = 0 ]; then
 	prompt physosvcs red
 else
 	prompt physosvcs
-	if [[ ${HOST} =~ "^.*\.zh\.local" ]]; then
+	if [[ ${HOST} =~ "^.*\.zh\.local" && $TTY =~ "/dev/pts/.*" ]]; then
 		eval `keychain --eval`
 	fi
 fi

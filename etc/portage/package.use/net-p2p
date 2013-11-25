@@ -1,2 +1,3 @@
+net-p2p/armory network
 net-p2p/deluge gtk webinterface
 net-p2p/rtorrent daemon xmlrpc

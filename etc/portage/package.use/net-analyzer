@@ -5,3 +5,4 @@ net-analyzer/ettercap gtk
 net-analyzer/unicornscan 
 net-analyzer/nmap lua
 net-analyzer/rrdtool perl
+net-analyzer/netcat -ipv6

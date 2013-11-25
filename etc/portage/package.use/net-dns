@@ -1,1 +1,2 @@
 net-dns/avahi mdnsresponder-compat -python
+net-dns/bind dlz caps
