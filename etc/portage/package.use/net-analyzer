@@ -1,4 +1,5 @@
 net-analyzer/ncrack ssh
+net-analyzer/zabbix agent
 net-analyzer/openvas-libraries restricted
 net-analyzer/wireshark gtk3 -gtk2 gcrypt -qt4
 net-analyzer/ettercap gtk

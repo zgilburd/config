@@ -1,31 +1,21 @@
-TERM=xterm
-alias dpcm='dbus-launch pcmanfm'
-# Set up the prompt
-alias rk='eval `keychain --eval`'
-alias ls='ls --color=auto'
+alias ls='ls -G'
 alias rgrep='egrep -rHni'
-# i work in bootstrap too much :(
-alias cdbg='cd ~/git/bootstrap'
-# i reload profiles too much
-alias rldp='. ~/.zshrc'
-alias rbbs='cdbg && make clean; make build && make bootstrap && jekyll build; cd -'
 alias cal='cal -3'
 alias isotoday='date +%Y%m%d'
+# export PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
 
-export REPORTTIME="10"
-export PATH=~/bin:~/.gem/ruby/1.8/bin/:~/localapps/bin:$PATH
 fpath=(~/.zsh/functions $fpath)
 autoload -U ~/.zsh/functions/*(:t)
-
 autoload -Uz promptinit compinit vcs_info
-
 setopt prompt_subst
 promptinit
+
 if [ ${UID} = 0 ]; then
 	prompt physosvcs red
 else
 	prompt physosvcs
-	if [[ ${HOST} =~ "^.*\.zh\.local" && $TTY =~ "/dev/pts/.*" ]]; then
+	if [[ {$HOST} =~ "^.*\.zh\.local" && $TTY =~ "/dev/pts/.*" ]]; then
 		eval `keychain --eval`
 	fi
 fi
@@ -34,8 +24,7 @@ fi
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-EDITOR=vim
+EDITOR='vim'
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
@@ -51,7 +40,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+#eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -82,4 +71,3 @@ case $TERM in
     precmd () {vcs_info; print -Pn "\e]0;%n@%m: %~\007"}
 	;;
 esac
-alias parestart="ps auxw|grep pulseaudio |awk '{print }' | head -n1 | xargs kill; pulseaudio --start --log-target=syslog"

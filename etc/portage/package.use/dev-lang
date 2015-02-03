@@ -1,7 +1,7 @@
 dev-lang/php crypt ctype filter json session unicode mysqli cgi
 dev-lang/perl -ithreads
 dev-lang/yasm -python
-dev-lang/php fpm
+dev-lang/php fpm xpm
 dev-ruby/rdoc ruby_targets_ruby20
 dev-ruby/racc ruby_targets_ruby20
 dev-ruby/json ruby_targets_ruby20
