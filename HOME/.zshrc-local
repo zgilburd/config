@@ -1,1 +1,0 @@
-alias iovpn="screen -S io bash -c 'cd ~/openvpn/iovpn-ztab/; sudo openvpn iovpn-ztab.ovpn'"
