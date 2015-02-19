@@ -1,0 +1,1 @@
+/home/zgilburd/localapps/pycharm/bin/pycharm.sh

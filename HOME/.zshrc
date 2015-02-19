@@ -12,9 +12,9 @@ fi
 if [ -s /etc/zsh_command_not_found ]; then
 	. /etc/zsh_command_not_found
 fi
-if `locate bin/java`; then
-	JAVA_HOME="$(/usr/libexec/java_home)"
-fi
+#if `locate bin/java`; then
+#	JAVA_HOME="$(/usr/libexec/java_home)"
+#fi
 
 # Set up the prompt
 fpath=(~/.zsh/functions $fpath)
