@@ -1,7 +1,0 @@
-app-emulation/emul-linux-x86-xlibs ~amd64
-app-emulation/emul-linux-x86-opengl ~amd64
-app-emulation/emul-linux-x86-qtlibs ~amd64
-app-emulation/emul-linux-x86-baselibs ~amd64
-app-emulation/emul-linux-x86-medialibs ~amd64
-app-emulation/emul-linux-x86-soundlibs ~amd64
-app-emulation/emul-linux-x86-db ~amd64

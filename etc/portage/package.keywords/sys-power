@@ -1,4 +1,0 @@
-sys-power/upower ~amd64
-sys-power/suspend ~amd64
-sys-power/powertop ~amd64
-=sys-power/acpi_call-9999 **

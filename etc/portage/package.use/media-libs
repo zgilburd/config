@@ -1,3 +1,0 @@
-media-libs/gd fontconfig
-media-libs/mesa gbm gles2 shared-dricore gallium llvm xorg xa -osmesa nptl 
-media-libs/libcanberra gnome 

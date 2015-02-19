@@ -1,10 +1,6 @@
 # physos ZSH prompt theme by <rainer@physos.com>
 # 
-# Modified by Zack to improve usability on multi-host environments.  Also, I've
-# extended the timestamps because I tend to leave terminals open with long-
-# running commands.
 #
-
 prompt_physosvcs_help () {
   cat <<'EOH'
 

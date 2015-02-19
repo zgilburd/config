@@ -1,6 +1,0 @@
-app-admin/tripwire ~amd64
-app-admin/conkyforecast ~amd64
-app-admin/ulogd ~amd64
-app-admin/keepass ~amd64
-
-=app-admin/ansible-9999 ** 

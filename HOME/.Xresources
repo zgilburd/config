@@ -21,12 +21,13 @@ Xcursor.theme                 : gentoo
 !-----------------------------------------------------------------------------
 
 ! interaction
+URxvt*urgentOnBell: true
 URxvt*saveLines               : 2000
 URxvt*iso14755                : False
 URxvt*iso14755_52             : False
-URxvt*scrollTtyOutput         : True
-URxvt*scrollTtyKeypress       : True
-URxvt*scrollWithBuffer        : False
+URxvt*scrollTtyOutput         : False
+URxvt*scrollTtyKeypress       : False
+URxvt*scrollWithBuffer        : True
 URxvt*fading                  : 26
 
 ! emulate ATerm for proper recognition of key combinations in Vim
@@ -104,7 +105,7 @@ URxvt*scrollstyle             : plain
 
 ! extensions
 URxvt*perl-ext-common         : default,matcher
-URxvt*url-launcher             : /usr/bin/chromium
+URxvt*url-launcher             : /usr/bin/google-chrome
 URxvt*matcher.button          : 2
 URxvt*colorUL: #4682B4
 
@@ -303,4 +304,4 @@ URxvt*background              : _background
 URxvt*cursorColor             : _cursorColor
 URxvt*transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
-URxvt*shading: 110
+URxvt*shading: 30
