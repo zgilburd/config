@@ -75,7 +75,7 @@ bindkey '^[[3~' delete-char
 case $TERM in
 	rxvt*)
 		precmd () {vcs_info; print -Pn "\033]0;%n@%m: %~\007"}
-		TERM=xterm
+		TERM=xterm  # i wish this weren't necessary
 	;;
 	xterm*)
     precmd () {vcs_info; print -Pn "\e]0;%n@%m: %~\007"}
