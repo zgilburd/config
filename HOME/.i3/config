@@ -222,4 +222,3 @@ bar {
         status_command i3status
 }
 
-exec "awsetbg Downloads/03036_emeraldmorainelake_2560x1600.jpg"
