@@ -1,26 +1,45 @@
-# Set up the prompt
 alias rk='eval `keychain --eval`'
 alias ls='ls --color=auto'
+alias rgrep='egrep -rHni'
+alias rldp='. ~/.zshrc'
+alias cal='cal -3'
+alias isotoday='date +%Y%m%d'
+PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
 
-export PATH=~/bin:$PATH
+if [ -s ~/.zshrclocal ]; then
+	. ~/.zshrclocal
+fi
+if `locate bin/java`; then
+	JAVA_HOME="$(/usr/libexec/java_home)"
+fi
+
+# Set up the prompt
 fpath=(~/.zsh/functions $fpath)
-autoload -U ~/.zsh/functions/*(:t)
 
+autoload -U ~/.zsh/functions/*(:t)
 autoload -Uz promptinit compinit vcs_info
 
 setopt prompt_subst
 promptinit
-prompt physosvcs
+if [ ${UID} = 0 ]; then
+	prompt physosvcs red
+else
+	prompt physosvcs
+	if [[ `hostname` =~ "^.*\.zh\.local" && $TTY =~ "/dev/pts/.*" ]]; then
+		eval `keychain --eval`
+	fi
+fi
+
 
 setopt histignorealldups sharehistory
 
-# Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
-EDITOR=vim
+GIT_EDITOR='vim'
+VISUAL='vim'
+bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 # Use modern completion system
@@ -32,7 +51,7 @@ zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
 zstyle ':completion:*' group-name ''
 zstyle ':completion:*' menu select=2
-eval "$(dircolors -b)"
+#eval "$(dircolors -b)"
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' list-colors ''
 zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
@@ -56,10 +75,11 @@ bindkey '^[[3~' delete-char
 
 # set a pretty term title
 case $TERM in
-    rxvt*)
-          precmd () {vcs_info; print -Pn "\033]0;%n@%m: %~\007"}
-          ;;
-    xterm*)
-          precmd () {print -Pn "e]0;%n@%m: %~a"}
-          ;;
+	rxvt*)
+		precmd () {vcs_info; print -Pn "\033]0;%n@%m: %~\007"}
+		TERM=xterm
+	;;
+	xterm*)
+    precmd () {vcs_info; print -Pn "\e]0;%n@%m: %~\007"}
+	;;
 esac
