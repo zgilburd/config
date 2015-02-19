@@ -9,6 +9,9 @@ PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/plat
 if [ -s ~/.zshrclocal ]; then
 	. ~/.zshrclocal
 fi
+if [ -s /etc/zsh_command_not_found ]; then
+	. /etc/zsh_command_not_found
+fi
 if `locate bin/java`; then
 	JAVA_HOME="$(/usr/libexec/java_home)"
 fi
@@ -28,6 +31,7 @@ else
 		eval `keychain --eval`
 	fi
 fi
+
 
 
 setopt histignorealldups sharehistory
