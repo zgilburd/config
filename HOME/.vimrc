@@ -3,8 +3,9 @@ call pathogen#infect()
 call pathogen#helptags()
 
 set ls=2            " allways show status line
-set tabstop=2       " numbers of spaces of tab character
-set shiftwidth=2    " numbers of spaces to (auto)indent
+set tabstop=4       " numbers of spaces of tab character
+set shiftwidth=4    " numbers of spaces to (auto)indent
+set softtabstop=4
 set scrolloff=3     " keep 3 lines when scrolling
 set showcmd         " display incomplete commands
 set hlsearch        " highlight searches
@@ -32,3 +33,22 @@ autocmd FileType yaml setlocal expandtab
 set formatoptions+=w
 set tw=80
 nnoremap Q gqip
+
+au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
+
+" What to use for an indent.
+" This will affect Ctrl-T and 'autoindent'.
+" Python: 4 spaces
+" C: tabs (pre-existing files) or 4 spaces (new files)
+au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
+au BufRead,BufNewFile *.py,*.pyw set expandtab
+fu Select_c_style()
+	if search('^\t', 'n', 150)
+		set shiftwidth=8
+		set noexpandtab
+	el set shiftwidth=4
+		set expandtab
+	en
+endf
+au BufRead,BufNewFile *.c,*.h call Select_c_style()
+au BufRead,BufNewFile Makefile* set noexpandtab
