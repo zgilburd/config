@@ -38,6 +38,7 @@ setopt histignorealldups sharehistory
 
 GIT_EDITOR='vim'
 VISUAL='vim'
+export EDITOR=$VISUAL
 bindkey -e
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
