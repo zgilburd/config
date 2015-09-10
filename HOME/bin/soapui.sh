@@ -1,0 +1,1 @@
+/home/zgilburd/localapps/SmartBear/SoapUI-5.2.0/bin/SoapUI-5.2.0
