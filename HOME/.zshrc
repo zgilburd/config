@@ -12,6 +12,9 @@ fi
 if [ -s /etc/zsh_command_not_found ]; then
 	. /etc/zsh_command_not_found
 fi
+if [ -s ~/.pythonrc ]; then
+	export PYTHONSTARTUP=~/.pythonrc
+fi
 #if `locate bin/java`; then
 #	JAVA_HOME="$(/usr/libexec/java_home)"
 #fi
@@ -86,3 +89,4 @@ case $TERM in
     precmd () {vcs_info; print -Pn "\e]0;%n@%m: %~\007"}
 	;;
 esac
+
