@@ -1,8 +1,14 @@
+uname=`uname`
 alias rk='eval `keychain --eval`'
 alias ls='ls --color=auto'
+alias cal='cal -3'
+if [[ "x$uname" == "xDarwin" ]]; then
+	alias rk='eval `keychain --agents gpg --eval`'
+	alias ls='gls --color=auto'
+	alias cal='gcal .'
+fi
 alias rgrep='egrep -rHni'
 alias rldp='. ~/.zshrc'
-alias cal='cal -3'
 alias isotoday='date +%Y%m%d'
 PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
 
@@ -30,8 +36,8 @@ if [ ${UID} = 0 ]; then
 	prompt physosvcs red
 else
 	prompt physosvcs
-	if [[ `hostname` =~ "^.*\.zh\.local" && $TTY =~ "/dev/pts/.*" ]]; then
-		eval `keychain --eval`
+	if [[ `hostname` =~ "^.*\.zh\.local" ]]; then
+			eval `keychain --agents gpg --eval`
 	fi
 fi
 
