@@ -37,7 +37,11 @@ if [ ${UID} = 0 ]; then
 else
 	prompt physosvcs
 	if [[ `hostname` =~ "^.*\.zh\.local" ]]; then
+		if [[ "x$uname" == "xDarwin" ]]; then
 			eval `keychain --agents gpg --eval`
+		else
+			eval `keychain --eval`
+		fi
 	fi
 fi
 
