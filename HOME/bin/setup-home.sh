@@ -1,6 +1,7 @@
 #!/bin/bash
-srclist=(`find \`pwd\` -maxdepth 1|grep -v -e LICENSE -e README.md | tail \
-	-n +2`)
+srclist=(`find \`pwd\` -maxdepth 1| grep -v -e LICENSE -e README.md | \
+	tail -n +2`)
+
 repo_list=(
 https://github.com/chriskempson/tomorrow-theme.git
 https://github.com/tpope/vim-surround.git 
@@ -10,7 +11,7 @@ https://github.com/tpope/vim-fugitive.git
 https://github.com/tpope/vim-pathogen.git)
 
 git_repos () {
-	echo "Cloning/updating the required git repos."
+	echo -e "Cloning/updating the required git repos.\n"
 	for i in ${repo_list[*]}; do
 		localdir=`echo "$i" | awk -F "/" '{print $NF}' | sed -e "s/.git$//"`
 		if [[ -d $HOME/git/$localdir ]]; then
@@ -60,7 +61,7 @@ if [[ $newlinks ]]; then
 		done
 	fi
 else
-	echo "No new links to create!"
+	echo -e "\nNo new links to create!"
 fi
 
 continue="xno"
@@ -74,23 +75,22 @@ fi
 if [[ $exists ]]; then
 	echo -e "\nLocal linking conflicts detected!\n"
 	printf "$HOME/%s\n" ${localnames[*]}
-	msg="Do you want to DELETE the local copy and re-link from source? [y/N]"
+	msg="\nDo you want to DELETE the local copy and re-link from source? [y/N] "
 	really_sure=0
 	continue="no"
 	while [[ $really_sure -lt 2 ]]; do
-		echo "$msg"
+		echo -en "$msg"
 		read answer
 		check_answer $answer
 		if [[ "x$continue" == "xyes" ]]; then
-			msg="Are you REALLY SURE - this is the last prompt! [y/N] "
+			msg="\nAre you REALLY SURE - this is the last prompt! [y/N] "
 			really_sure+=1
 		else
 			exit 0
 		fi
 	done
-	for i in ${exists[*]}; do
-		shortname=`echo $i | awk -F "/" '{print $NF}'`
-		rm -rf $HOME/$shortname
-		ln -sf $i $HOME
+	for i in ${!exists[*]}; do
+		rm -rf $HOME/${localnames[$i]}
+		ln -sf ${exists[$i]} $HOME
 	done
 fi
