@@ -1,9 +1,8 @@
 uname=`uname`
-alias rk='eval `keychain --eval`'
+alias rk='eval `keychain --agents gpg --eval`'
 alias ls='ls --color=auto'
 alias cal='cal -3'
 if [[ "x$uname" == "xDarwin" ]]; then
-	alias rk='eval `keychain --agents gpg --eval`'
 	alias ls='gls --color=auto'
 	alias cal='gcal .'
 fi
