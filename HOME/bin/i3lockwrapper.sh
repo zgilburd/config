@@ -2,11 +2,20 @@
 
 TEMPDIR=`mktemp -d`
 IMGFILE=$TEMPDIR/screen-lock.png
-
-scrot -m $IMGFILE
-#import -window root $IMGFILE
-convert $IMGFILE -scale 2% -scale 5000% $IMGFILE
-i3lock -i $IMGFILE
+#import -window root $IMGFILE 
+if scrot -m $IMGFILE; then
+	PROCEED=true
+	convert $IMGFILE -scale 1% -scale 10000% $IMGFILE 
+	i3lock -i $IMGFILE
+else
+	echo "could not save screenshot"
+fi
 rm -rf $TEMPDIR
-sleep 60; pgrep i3lock && xset dpms force off
-
+if $PROCEED; then
+	sleep 60
+	if ps -p `pidof i3lock` > /dev/null 2>&1; then
+		xset dpms force off
+	fi
+else
+	echo "aborting"
+fi
