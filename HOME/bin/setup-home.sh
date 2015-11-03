@@ -70,7 +70,7 @@ fi
 
 continue="xno"
 echo -en "\nDo you want to clone/update the required git repos? [Y/n] "
-if [ $1 == '-y']; then
+if [ $1 == '-y' ]; then
 	continue="yes"
 else
 	read answer
