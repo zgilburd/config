@@ -53,7 +53,7 @@ if [[ $newlinks ]]; then
 	echo -e "\nThese links do not already exist and can be created cleanly:\n"
 	printf "%s\n" ${newlinks[*]}
 	echo -en "\nDo you want to create new links? [y/N] "
-	if [ $1 == '-y']; then
+	if [ $1 == '-y' ]; then
 		continue="yes"
 	else
 		read answer
