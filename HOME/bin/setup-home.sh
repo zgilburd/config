@@ -53,8 +53,12 @@ if [[ $newlinks ]]; then
 	echo -e "\nThese links do not already exist and can be created cleanly:\n"
 	printf "%s\n" ${newlinks[*]}
 	echo -en "\nDo you want to create new links? [y/N] "
-	read answer
-	check_answer $answer
+	if [ $1 == '-y']; then
+		continue="yes"
+	else
+		read answer
+		check_answer $answer
+	fi
 	if [[ "x$continue" == "xyes" ]]; then
 		for i in ${newlinks[*]}; do
 			ln -sf $i $HOME
@@ -66,8 +70,12 @@ fi
 
 continue="xno"
 echo -en "\nDo you want to clone/update the required git repos? [Y/n] "
-read answer
-check_answer $answer
+if [ $1 == '-y']; then
+	continue="yes"
+else
+	read answer
+	check_answer $answer
+fi
 if [[ -z $answer || "x$continue" == "xyes" ]]; then
 	git_repos
 fi
@@ -80,8 +88,12 @@ if [[ $exists ]]; then
 	continue="no"
 	while [[ $really_sure -lt 2 ]]; do
 		echo -en "$msg"
-		read answer
-		check_answer $answer
+		if [ $1 == '-y' ]; then
+			continue="yes"
+		else
+			read answer
+			check_answer $answer
+		fi
 		if [[ "x$continue" == "xyes" ]]; then
 			msg="\nAre you REALLY SURE - this is the last prompt! [y/N] "
 			really_sure+=1
