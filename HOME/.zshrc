@@ -2,6 +2,8 @@ uname=`uname`
 alias rk='eval `keychain --agents gpg --eval`'
 alias ls='ls --color=auto'
 alias cal='cal -3'
+alias pwgen='pwchars="alnum punct"; for chars in `echo $pwchars |sed "s/ /\n/"`; do charset="[:$chars:]$charset"; tr -dc "$charset" < /dev/random | fold -w 24 |head -n5; done; unset charset'
+alias pwgenrng='pwchars="alnum punct"; for chars in `echo $pwchars |sed "s/ /\n/"`; do charset="[:$chars:]$charset"; tr -dc "$charset" < /dev/random | fold -w 24 |head -n5; done; unset charset'
 if [[ "x$uname" == "xDarwin" ]]; then
 	alias ls='gls --color=auto'
 	alias cal='gcal .'
@@ -9,7 +11,12 @@ fi
 alias rgrep='egrep -rHni'
 alias rldp='. ~/.zshrc'
 alias isotoday='date +%Y%m%d'
-PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
+if [[ -d ~/android-sdk/sdk/platform-tools && -d ~/android-sdk/sdk/tools ]]; then
+	PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
+else
+	PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:$PATH
+fi
+
 
 if [ -s ~/.zshrclocal ]; then
 	. ~/.zshrclocal
