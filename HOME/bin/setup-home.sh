@@ -37,9 +37,14 @@ git_repos () {
 			git clone $i $gitdir > /dev/null 2>&1 && 
 			echo "Successfully cloned $gitdir" || echo "Failed to clone $gitdir"
 		fi
-		gitdirs="$gitdir\n$gitdirs"
-		make_other_link $gitdirs
+		if [ $gitdirs ]; then
+			gitdirs="$gitdir $gitdirs"
+		else
+			gitdirs="$gitdir"
+		fi
 	done
+	echo "making links for $gitdirs"
+	make_other_link $gitdirs
 }
 
 check_answer () {
@@ -124,4 +129,3 @@ if [[ $exists ]]; then
 	done
 fi
 
-make_other_link
