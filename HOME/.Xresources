@@ -97,7 +97,7 @@ URxvt*keysym.M-C-S-Home       : \033[1;8H
 URxvt*keysym.M-C-S-End        : \033[1;8F
 
 ! appearance
-URxvt*font                    : xft:monospace:pixelsize=11
+URxvt*font                    : xft:monospace:pixelsize=12
 URxvt*scrollbar 							: false
 URxvt*scrollBar_right         : True
 URxvt*scrollBar_floating      : True
@@ -305,3 +305,7 @@ URxvt*cursorColor             : _cursorColor
 URxvt*transparent: true
 ! URxvt*.shading: 0 to 99 darkens, 101 to 200 lightens
 URxvt*shading: 30
+
+URxvt.perl-ext-common: ...,font-size
+URxvt.keysym.C-plus: font-size:increase
+URxvt.keysym.C-underscore:  font-size:decrease
