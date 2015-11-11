@@ -43,7 +43,7 @@ git_repos () {
 			git clone $i $gitdir > /dev/null 2>&1 && 
 			echo "Successfully cloned $gitdir" || echo "Failed to clone $gitdir"
 		fi
-		if [ -z $gitdirs ]; then
+		if [ -z "$gitdirs" ]; then
 			gitdirs="$gitdir"
 		else
 			gitdirs="$gitdir $gitdirs"
