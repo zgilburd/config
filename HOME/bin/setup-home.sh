@@ -13,6 +13,7 @@ https://github.com/tpope/vim-pathogen.git)
 
 git_repos () {
 	echo -e "Cloning/updating the required git repos.\n"
+	mkdir -p $HOME/git
 	for i in ${repo_list[*]}; do
 		gitdir=`echo $i | awk -F \/ '{ print $(NF-1)"-"$NF }' | sed -e "s/.git$//"`
 		if [[ -d $HOME/git/$gitdir ]]; then
@@ -40,12 +41,13 @@ check_answer () {
 make_other_link () {
 	mkdir -p ~/.vim/bundle/
 	cd $HOME/git
-	for i in `echo $gitdirs|grep -v -e urxvt -e pathogen`; do
+	for i in `echo $gitdirs|grep -v -e urxvt -e pathogen -e tomorrow-theme`; do
 		ln -sf $HOME/git/$i ~/.vim/bundle/
 	done
 	ln -sf $HOME/git/tpope-vim-pathogen/autoload ~/.vim/autoload
 	mkdir -p ~/.urxvt/ext
 	ln -sf $HOME/git/majutsushi-urxvt-font-size/font-size ~/.urxvt/ext/
+	ln -sf $HOME/git/chriskempson-tomorrow-theme/vim ~/.vim/bundle/tomorrow-theme
 }
 
 
@@ -103,7 +105,7 @@ if [[ $exists ]]; then
 	continue="no"
 	while [[ $really_sure -lt 2 ]]; do
 		echo -en "$msg"
-		if [ $1 == '-y' ]; then
+		if [[ $1 == '-y' ]]; then
 			continue="yes"
 		else
 			read answer
@@ -121,3 +123,5 @@ if [[ $exists ]]; then
 		ln -sf ${exists[$i]} $HOME
 	done
 fi
+
+make_other_link
