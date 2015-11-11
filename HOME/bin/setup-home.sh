@@ -14,8 +14,14 @@ https://github.com/tpope/vim-pathogen.git)
 make_other_link () {
 	mkdir -p ~/.vim/bundle/
 	cd $HOME/git
-	for i in `echo $*|grep -v -e urxvt -e pathogen -e tomorrow-theme`; do
-		ln -sf $HOME/git/$i ~/.vim/bundle/
+	for i in `echo $*`; do
+		if [[ $i =~ urxvt || $i =~ pathogen || $i =~ tomorrow-theme ]]; then
+			echo "not linking $i"
+			true
+		else
+			echo "linking $i"
+			ln -sf $HOME/git/$i ~/.vim/bundle/
+		fi
 	done
 	ln -sf $HOME/git/tpope-vim-pathogen/autoload ~/.vim/autoload
 	mkdir -p ~/.urxvt/ext
