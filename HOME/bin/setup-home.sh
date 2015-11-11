@@ -8,21 +8,23 @@ https://github.com/tpope/vim-surround.git
 https://github.com/edsono/vim-matchit.git 
 https://github.com/groenewege/vim-less.git
 https://github.com/tpope/vim-fugitive.git
+https://github.com/majutsushi/urxvt-font-size.git
 https://github.com/tpope/vim-pathogen.git)
 
 git_repos () {
 	echo -e "Cloning/updating the required git repos.\n"
 	for i in ${repo_list[*]}; do
-		localdir=`echo "$i" | awk -F "/" '{print $NF}' | sed -e "s/.git$//"`
-		if [[ -d $HOME/git/$localdir ]]; then
-			cd $HOME/git/$localdir
-			git pull > /dev/null 2>&1 && echo "Successfully updated $localdir" ||
-				echo "Failed to update $localdir"
+		gitdir=`echo $i | awk -F \/ '{ print $(NF-1)"-"$NF }' | sed -e "s/.git$//"`
+		if [[ -d $HOME/git/$gitdir ]]; then
+			cd $HOME/git/$gitdir
+			git pull > /dev/null 2>&1 && echo "Successfully updated $gitdir" ||
+				echo "Failed to update $gitdir"
 		else
 			cd $HOME/git
-			git clone $i > /dev/null 2>&1 && 
-			echo "Successfully cloned $localdir" || echo "Failed to clone $localdir"
+			git clone $i $gitdir > /dev/null 2>&1 && 
+			echo "Successfully cloned $gitdir" || echo "Failed to clone $gitdir"
 		fi
+		gitdirs="$gitdir\n$gitdirs"
 	done
 }
 
@@ -34,6 +36,19 @@ check_answer () {
 		continue="yes"
 	fi
 }
+
+make_other_link () {
+	mkdir -p ~/.vim/bundle/
+	cd $HOME/git
+	for i in `echo $gitdirs|grep -v -e urxvt -e pathogen`; do
+		ln -sf $HOME/git/$i ~/.vim/bundle/
+	done
+	ln -sf $HOME/git/tpope-vim-pathogen/autoload ~/.vim/autoload
+	mkdir -p ~/.urxvt/ext
+	ln -sf $HOME/git/majutsushi-urxvt-font-size/font-size ~/.urxvt/ext/
+}
+
+
 
 echo -e "Setting up home directory. Will attempt to create links for:\n"
 
