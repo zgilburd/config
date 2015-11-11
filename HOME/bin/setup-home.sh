@@ -11,6 +11,18 @@ https://github.com/tpope/vim-fugitive.git
 https://github.com/majutsushi/urxvt-font-size.git
 https://github.com/tpope/vim-pathogen.git)
 
+make_other_link () {
+	mkdir -p ~/.vim/bundle/
+	cd $HOME/git
+	for i in `$*|grep -v -e urxvt -e pathogen -e tomorrow-theme`; do
+		ln -sf $HOME/git/$i ~/.vim/bundle/
+	done
+	ln -sf $HOME/git/tpope-vim-pathogen/autoload ~/.vim/autoload
+	mkdir -p ~/.urxvt/ext
+	ln -sf $HOME/git/majutsushi-urxvt-font-size/font-size ~/.urxvt/ext/
+	ln -sf $HOME/git/chriskempson-tomorrow-theme/vim ~/.vim/bundle/tomorrow-theme
+}
+
 git_repos () {
 	echo -e "Cloning/updating the required git repos.\n"
 	mkdir -p $HOME/git
@@ -26,6 +38,7 @@ git_repos () {
 			echo "Successfully cloned $gitdir" || echo "Failed to clone $gitdir"
 		fi
 		gitdirs="$gitdir\n$gitdirs"
+		make_other_link $gitdirs
 	done
 }
 
@@ -37,19 +50,6 @@ check_answer () {
 		continue="yes"
 	fi
 }
-
-make_other_link () {
-	mkdir -p ~/.vim/bundle/
-	cd $HOME/git
-	for i in `echo $gitdirs|grep -v -e urxvt -e pathogen -e tomorrow-theme`; do
-		ln -sf $HOME/git/$i ~/.vim/bundle/
-	done
-	ln -sf $HOME/git/tpope-vim-pathogen/autoload ~/.vim/autoload
-	mkdir -p ~/.urxvt/ext
-	ln -sf $HOME/git/majutsushi-urxvt-font-size/font-size ~/.urxvt/ext/
-	ln -sf $HOME/git/chriskempson-tomorrow-theme/vim ~/.vim/bundle/tomorrow-theme
-}
-
 
 
 echo -e "Setting up home directory. Will attempt to create links for:\n"
