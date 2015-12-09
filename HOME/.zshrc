@@ -46,7 +46,7 @@ else
 		if [[ "x$uname" == "xDarwin" ]]; then
 			eval `keychain --agents gpg --eval`
 		else
-			eval `keychain --eval`
+			eval `keychain --agents gpg --eval`
 		fi
 	fi
 fi
