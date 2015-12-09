@@ -19,7 +19,7 @@ if [ `grep -c $username /etc/passwd` -lt 1 ]; then
 	echo -e $pubkey > /home/$username/.ssh/authorized_keys
 	chown -R $username:$username /home/$username
 	echo -e "$username\tALL=(ALL:ALL)\tNOPASSWD:ALL" >> /etc/sudoers
-	if [ ! `which $shell`]; then
+	if [ ! `which $shell` ]; then
 		$command $shell
 	fi
 else
