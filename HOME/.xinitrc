@@ -5,6 +5,5 @@ dropbox &
 thunar --daemon &
 ~/.screenlayout/default.sh &
 pidgin &
-~/bin/lockremove-checker.sh &
 nitrogen --restore &
-exec ck-launch-session i3
+exec i3
