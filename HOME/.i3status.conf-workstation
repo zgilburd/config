@@ -8,6 +8,7 @@ order += "ipv6"
 order += "disk /"
 order += "run_watch DHCP"
 order += "ethernet eth0"
+order += "ethernet br0"
 order += "cpu_usage"
 order += "cpu_temperature 0"
 order += "load"
@@ -24,9 +25,13 @@ ethernet eth0 {
 	format_up = "eth0: %ip %speed"
 	format_down = "E: eth0 down"
 }
+ethernet br0 {
+	format_up = "br0: %ip"
+	format_down = "br0 down"
+}
 
 run_watch DHCP {
-	pidfile = "/var/run/dhclient.pid"
+	pidfile = "/var/run/dhcpcd-br0.pid"
 }
 
 tztime local {

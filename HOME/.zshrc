@@ -1,4 +1,6 @@
 uname=`uname`
+alias s='sudo'
+alias nga='pkill -9 gpg-agent'
 alias rk='eval `keychain --agents gpg --eval`'
 alias ls='ls --color=auto'
 alias cal='cal -3'
@@ -9,6 +11,7 @@ if [[ "x$uname" == "xDarwin" ]]; then
 	alias cal='gcal .'
 fi
 alias rgrep='egrep -rHni'
+alias igrep='egrep -i -e'
 alias rldp='. ~/.zshrc'
 alias isotoday='date +%Y%m%d'
 if [[ -d ~/android-sdk/sdk/platform-tools && -d ~/android-sdk/sdk/tools ]]; then
@@ -42,11 +45,11 @@ if [ ${UID} = 0 ]; then
 	prompt physosvcs red
 else
 	prompt physosvcs
-	if [[ `hostname` =~ "^.*\.zh\.local" ]]; then
-		if [[ "x$uname" == "xDarwin" ]]; then
-			eval `keychain --agents gpg --eval`
+	if [[ `hostname` =~ "^.*\.zg\.local" ]]; then
+		if [[ -S ~/.gnupg/S.gpg-agent.ssh && `pidof gpg-agent` ]]; then
+			export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
 		else
-			eval `keychain --agents gpg --eval`
+			rk
 		fi
 	fi
 fi
