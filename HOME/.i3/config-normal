@@ -226,5 +226,7 @@ bar {
 exec "xrdb -remove ~/.Xresources"
 exec "xrdb -merge ~/.Xresources"
 exec "dropbox start"
-
+exec "numlockx off && numlockx on"
+exec "slack"
 exec "xautolock -time 2 -locker ~/bin/i3lockwrapper.sh"
+
