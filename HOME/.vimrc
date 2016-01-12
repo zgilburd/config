@@ -42,6 +42,9 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
 " C: tabs (pre-existing files) or 4 spaces (new files)
 au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
 au BufRead,BufNewFile *.py,*.pyw set expandtab
+au BufRead,BufNewFile *.py,*.pyw set smarttab
+au BufRead,BufNewFile *.py,*.pyw set tabstop=4
+au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
 fu Select_c_style()
 	if search('^\t', 'n', 150)
 		set shiftwidth=8
@@ -52,3 +55,14 @@ fu Select_c_style()
 endf
 au BufRead,BufNewFile *.c,*.h call Select_c_style()
 au BufRead,BufNewFile Makefile* set noexpandtab
+
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+set guioptions-=T " Remove toolbar
+set guioptions-=r " Remove right scrollbar
+set guioptions-=L " Remove left scrollbar
+
+" let g:syntastic_python_checkers = ['flake8']
+let g:powerline_pycmd = "py3"
