@@ -64,5 +64,16 @@ set guioptions-=T " Remove toolbar
 set guioptions-=r " Remove right scrollbar
 set guioptions-=L " Remove left scrollbar
 
+" set up powerline for python
 " let g:syntastic_python_checkers = ['flake8']
 let g:powerline_pycmd = "py3"
+
+" more natural split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" open to right & bottom instead of default
+set splitbelow
+set splitright
