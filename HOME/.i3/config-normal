@@ -173,9 +173,9 @@ bindsym $mod+Ctrl+Shift+parenright move workspace 00
 bindsym $mod+Shift+C reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+R restart
+bindsym $mod+Shift+Ctrl+R restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+E exit
+bindsym $mod+Shift+Ctrl+E exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -225,8 +225,9 @@ bar {
 
 exec "xrdb -remove ~/.Xresources"
 exec "xrdb -merge ~/.Xresources"
+exec "xautolock -time 2 -locker ~/bin/i3lockwrapper.sh"
 exec "dropbox start"
 exec "numlockx off && numlockx on"
 exec "slack"
-exec "xautolock -time 2 -locker ~/bin/i3lockwrapper.sh"
+exec "xpad"
 
