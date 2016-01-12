@@ -4,9 +4,13 @@ srclist=(`find \`pwd\` -maxdepth 1| grep -v -e LICENSE -e README.md | \
 
 repo_list=(
 https://github.com/chriskempson/tomorrow-theme.git
+#https://github.com/scrooloose/syntastic.git
+https://github.com/klen/python-mode.git
+https://github.com/ryanoasis/vim-devicons.git
 https://github.com/tpope/vim-surround.git 
 https://github.com/edsono/vim-matchit.git 
 https://github.com/groenewege/vim-less.git
+https://github.com/scrooloose/nerdtree.git
 https://github.com/tpope/vim-fugitive.git
 https://github.com/majutsushi/urxvt-font-size.git
 https://github.com/tpope/vim-pathogen.git)
