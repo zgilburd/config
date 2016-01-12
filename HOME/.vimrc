@@ -56,16 +56,14 @@ endf
 au BufRead,BufNewFile *.c,*.h call Select_c_style()
 au BufRead,BufNewFile Makefile* set noexpandtab
 
+" remove unwanted UI elements
+set guioptions-=T 
+set guioptions-=r 
+set guioptions-=L 
 
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-set guioptions-=T " Remove toolbar
-set guioptions-=r " Remove right scrollbar
-set guioptions-=L " Remove left scrollbar
-
-" set up powerline for python
+" no longer using syntastic
 " let g:syntastic_python_checkers = ['flake8']
+" set up powerline for python
 let g:powerline_pycmd = "py3"
 
 " more natural split navigation
@@ -77,3 +75,14 @@ nnoremap <C-H> <C-W><C-H>
 " open to right & bottom instead of default
 set splitbelow
 set splitright
+
+" pythonmode settings
+let g:pymode_rope_show_doc_bind = '<C-c>d'
+
+" nerdtree settings
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+" auto close vim if nerdtree is the last window open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
