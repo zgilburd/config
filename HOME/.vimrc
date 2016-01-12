@@ -78,6 +78,7 @@ set splitright
 
 " pythonmode settings
 let g:pymode_rope_show_doc_bind = '<C-c>d'
+au BufWriteCmd *.py write || :PymodeLint
 
 " nerdtree settings
 autocmd StdinReadPre * let s:std_in=1
