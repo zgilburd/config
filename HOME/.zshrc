@@ -15,9 +15,9 @@ alias igrep='egrep -i -e'
 alias rldp='. ~/.zshrc'
 alias isotoday='date +%Y%m%d'
 if [[ -d ~/android-sdk/sdk/platform-tools && -d ~/android-sdk/sdk/tools ]]; then
-	PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
+	PATH=~/bin:~/localapps/bin:/usr/local/bin:/usr/local/sbin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
 else
-	PATH=/usr/local/bin:/usr/local/sbin:~/bin:~/localapps/bin:$PATH
+	PATH=~/bin:~/localapps/bin:/usr/local/bin:/usr/local/sbin:$PATH
 fi
 
 
