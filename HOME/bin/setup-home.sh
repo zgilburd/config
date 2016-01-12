@@ -84,12 +84,16 @@ done
 if [[ $newlinks ]]; then
 	echo -e "\nThese links do not already exist and can be created cleanly:\n"
 	printf "%s\n" ${newlinks[*]}
-	echo -en "\nDo you want to create new links? [y/N] "
+	echo -en "\nDo you want to create new links? [Y/n] "
 	if [[ $1 == '-y' ]]; then
 		continue="yes"
 	else
 		read answer
-		check_answer $answer
+		if [[ -z $answer ]]; then
+			continue="yes"
+		else
+			check_answer $answer
+		fi
 	fi
 	if [[ "x$continue" == "xyes" ]]; then
 		for i in ${newlinks[*]}; do
