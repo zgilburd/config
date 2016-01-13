@@ -40,11 +40,7 @@ au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
 " This will affect Ctrl-T and 'autoindent'.
 " Python: 4 spaces
 " C: tabs (pre-existing files) or 4 spaces (new files)
-au BufRead,BufNewFile *.py,*pyw set shiftwidth=4
-au BufRead,BufNewFile *.py,*.pyw set expandtab
-au BufRead,BufNewFile *.py,*.pyw set smarttab
-au BufRead,BufNewFile *.py,*.pyw set tabstop=4
-au BufRead,BufNewFile *.py,*.pyw set softtabstop=4
+au BufRead,BufNewFile *.py,*.pyw set sw=4 expandtab smarttab ts=4 sts=4
 fu Select_c_style()
 	if search('^\t', 'n', 150)
 		set shiftwidth=8
@@ -55,6 +51,7 @@ fu Select_c_style()
 endf
 au BufRead,BufNewFile *.c,*.h call Select_c_style()
 au BufRead,BufNewFile Makefile* set noexpandtab
+au BufRead,BufNewFile *.html,*.htm setlocal sw=2 ts=2 sts=2 smarttab expandtab
 
 " remove unwanted UI elements
 set guioptions-=T 
