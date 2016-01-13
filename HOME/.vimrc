@@ -33,6 +33,7 @@ autocmd FileType yaml setlocal expandtab
 set formatoptions+=w
 set tw=80
 nnoremap Q gqip
+nmap <C-Q> :quit<CR>
 
 au BufRead,BufNewFile *py,*pyw,*.c,*.h set tabstop=8
 
@@ -74,13 +75,16 @@ set splitbelow
 set splitright
 
 " pythonmode settings
+au BufRead,BufNewFile *.py nmap <C-Q> :PymodeLintAuto<CR>
 let g:pymode_rope_show_doc_bind = '<C-c>d'
 au BufWriteCmd *.py write || :PymodeLint
 
 " nerdtree settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
 " auto close vim if nerdtree is the last window open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" required for c-q to work
+silent !stty -ixon > /dev/null 2>/dev/null
