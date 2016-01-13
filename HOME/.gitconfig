@@ -1,5 +1,7 @@
-[push]
-	default = current
 [user]
+	email = zack@gilburd.com
 	name = Zack Gilburd
-	email = <zack@gilburd.com>
+[push]
+	default = matching
+[alias]
+	ci = commit -v
