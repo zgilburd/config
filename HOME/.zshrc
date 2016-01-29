@@ -108,4 +108,3 @@ case $TERM in
     precmd () {vcs_info; print -Pn "\e]0;%n@%m: %~\007"}
 	;;
 esac
-
