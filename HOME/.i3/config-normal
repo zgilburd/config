@@ -230,4 +230,4 @@ exec "dropbox start"
 exec "numlockx off && numlockx on"
 exec "slack"
 exec "xpad"
-
+exec "setxkbmap -option ctrl:nocaps"
