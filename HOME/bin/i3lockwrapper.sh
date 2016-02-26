@@ -15,6 +15,9 @@ if $PROCEED; then
 	sleep 60
 	if ps -p `pidof i3lock` > /dev/null 2>&1; then
 		xset dpms force off
+		echo "turning off display"
+	else
+		echo "i3 unlocked"
 	fi
 else
 	echo "aborting"
