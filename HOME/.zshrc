@@ -1,7 +1,6 @@
 uname=`uname`
 alias s='sudo'
-alias nga='pkill -9 gpg-agent'
-alias rk='eval `keychain --agents gpg --eval`'
+alias rk='for i in gpg-agent scdaemon;do pkill -9 $i;done;eval `gpg-agent`'
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -lah'
 alias cal='cal -3'
@@ -48,12 +47,12 @@ if [ ${UID} = 0 ]; then
 else
 	prompt physosvcs
 	if [[ `hostname` =~ "^.*\.zg\.local" ]]; then
-		if [[ -S ~/.gnupg/S.gpg-agent.ssh && `pidof gpg-agent` ]]; then
-			export SSH_AUTH_SOCK=~/.gnupg/S.gpg-agent.ssh
-		else
-			rk
-		fi
-	fi
+        if [[ -S /run/user/${UID}/gnupg/S.gpg-agent.ssh && `pidof gpg-agent` ]]; then
+            export SSH_AUTH_SOCK=/run/user/${UID}/gnupg/S.gpg-agent.ssh
+        else
+            echo "need a new agent"
+        fi  
+    fi  
 fi
 
 
