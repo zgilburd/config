@@ -5,7 +5,7 @@ alias ls='ls --color=auto'
 alias ll='ls --color=auto -lah'
 alias cal='cal -3'
 alias commit='git commit -v'
-alias pwgen='pwchars="alnum punct"; for chars in `echo $pwchars |sed "s/ /\n/"`; do charset="[:$chars:]$charset"; tr -dc "$charset" < /dev/random | fold -w 24 |head -n5; done; unset charset'
+alias pwgen='pwchars="alnum punct"; for chars in `echo $pwchars |sed "s/ /\n/"`; do charset="[:$chars:]$charset"; tr -dc "$charset" < /dev/urandom | fold -w 24 |head -n5; done; unset charset'
 alias pwgenrng='pwchars="alnum punct"; for chars in `echo $pwchars |sed "s/ /\n/"`; do charset="[:$chars:]$charset"; tr -dc "$charset" < /dev/random | fold -w 24 |head -n5; done; unset charset'
 if [[ "x$uname" == "xDarwin" ]]; then
 	alias ls='gls --color=auto'
