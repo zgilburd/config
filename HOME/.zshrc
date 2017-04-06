@@ -1,5 +1,5 @@
 uname=`uname`
-alias compile-ssh-config='echo -n > ~/.ssh/config && cat ~/.ssh/.config > ~/.ssh/config'
+alias compile-ssh-config='echo -n > ~/.ssh/config && cat ~/.ssh/config-head >> ~/.ssh/config && cat ~/.ssh/.config >> ~/.ssh/config'
 alias alias ssh='compile-ssh-config && ssh'
 alias s='sudo'
 alias rk='for i in gpg-agent scdaemon;do pkill -9 $i;done;eval `gpg-agent`'
