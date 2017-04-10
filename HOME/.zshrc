@@ -17,6 +17,8 @@ alias rgrep='egrep -rHni'
 alias igrep='egrep -i -e'
 alias rldp='. ~/.zshrc'
 alias isotoday='date +%Y%m%d'
+OSTYPE=`uname -s`
+
 if [[ -d ~/android-sdk/sdk/platform-tools && -d ~/android-sdk/sdk/tools ]]; then
 	PATH=~/bin:~/localapps/bin:/usr/local/bin:/usr/local/sbin:~/android-sdk/sdk/platform-tools:~/android-sdk/sdk/tools:$PATH
 else
@@ -48,12 +50,18 @@ if [ ${UID} = 0 ]; then
 	prompt physosvcs red
 else
 	prompt physosvcs
-	if [[ `hostname` =~ "^.*\.zg\.local" ]]; then
-        if [[ -S /run/user/${UID}/gnupg/S.gpg-agent.ssh && `pidof gpg-agent` ]]; then
-            export SSH_AUTH_SOCK=/run/user/${UID}/gnupg/S.gpg-agent.ssh
-        else
-            echo "need a new agent"
-        fi  
+	case $OSTYPE in
+		Darwin)
+			SOCKPATH=/Users/${USER}/.gnupg
+		;;
+		Linux)
+			SOCKPATH=/run/user/${UID}/gnupg
+		;;
+	esac
+	if [[ -S $SOCKPATH/S.gpg-agent.ssh && `pidof gpg-agent` ]]; then
+		export SSH_AUTH_SOCK=$SOCKPATH/S.gpg-agent.ssh
+	else
+		echo "no agent"
     fi  
 fi
 
