@@ -19,6 +19,7 @@ for_window [class="meld"] floating enable
 for_window [class="Skype"] floating enable assign 5
 for_window [class="Pidgin"] floating enable
 for_window [class="Vlc"] floating enable
+for_window [title="Google Hangouts"] floating disable assign 3
 
 workspace "1" output DFP11
 workspace "2" output DFP11
