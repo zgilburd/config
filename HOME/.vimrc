@@ -2,6 +2,9 @@
 call pathogen#infect()
 call pathogen#helptags()
 
+set nocompatible
+set modeline
+set modelines=1
 set ls=2            " allways show status line
 set tabstop=4       " numbers of spaces of tab character
 set shiftwidth=4    " numbers of spaces to (auto)indent
@@ -88,3 +91,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 " required for c-q to work
 silent !stty -ixon > /dev/null 2>/dev/null
+
+:nnoremap <F5> "=strftime("%c")<CR>P
+:inoremap <F5> <C-R>=strftime("%c")<CR>
