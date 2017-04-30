@@ -11,6 +11,7 @@ https://github.com/tpope/vim-surround.git
 https://github.com/edsono/vim-matchit.git 
 https://github.com/groenewege/vim-less.git
 https://github.com/scrooloose/nerdtree.git
+https://github.com/vim-scripts/ReplaceWithRegister.git
 https://github.com/tpope/vim-fugitive.git
 https://github.com/plasticboy/vim-markdown.git
 https://github.com/majutsushi/urxvt-font-size.git
