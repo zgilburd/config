@@ -86,6 +86,7 @@
     org-src-fontify-natively t
     org-src-preserve-indentation t
     org-confirm-babel-evaluate nil)
+  (setq org-startup-truncated nil)
   ;; Syntax hilighting for exported code
   (add-to-list 'org-latex-packages-alist '("" "minted"))
   (setq org-latex-listings 'minted)
