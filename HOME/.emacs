@@ -69,7 +69,7 @@
   (require 'ox-md)
   (require 'ox-confluence)
   (setq org-todo-keywords
-    '((sequence "TODO" "IN-PROGRESS" "ASSIGNED" "WAITING" "|" "DONE" "CANCELLED")))
+    '((sequence "TODO(t)" "IN-PROGRESS(i)" "ASSIGNED(a)" "WAITING(w)""|" "DONE(d)" "CANCELLED(c)")))
   (setq org-enforce-todo-dependencies t)
   (setq org-log-done (quote time))
   (setq org-log-redeadline (quote time))
