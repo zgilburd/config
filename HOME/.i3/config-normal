@@ -276,3 +276,4 @@ exec "setxkbmap -option ctrl:nocaps"
 exec "~/bin/hhkb-fix.sh"
 exec --no-startup-id nitrogen --restore
 exec "volumeicon"
+exec "xscreensaver"
