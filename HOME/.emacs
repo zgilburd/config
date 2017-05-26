@@ -53,14 +53,8 @@
   (lambda ()
     (define-key org-agenda-mode-map "\C-n" 'evil-next-buffer)
     (define-key org-agenda-mode-map "\C-p" 'evil-prev-buffer)
-    (define-key org-agenda-mode-map "b" 'evil-backward-word-begin)
-    (define-key org-agenda-mode-map "h" 'evil-backward-char)
     (define-key org-agenda-mode-map "j" 'evil-next-line)
-    (define-key org-agenda-mode-map "k" 'evil-previous-line)
-    (define-key org-agenda-mode-map "l" 'evil-forward-char)
-    (define-key org-agenda-mode-map "n" 'evil-forward-word-begin)
-    (define-key org-agenda-mode-map "p" 'evil-forward-word-begin)
-    (define-key org-agenda-mode-map "w" 'evil-forward-word-begin)))
+    (define-key org-agenda-mode-map "k" 'evil-previous-line)))
 
 (use-package org
   :ensure t
@@ -129,3 +123,18 @@
   inhibit-startup-message t
   inhibit-startup-echo-area-message t)
 
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
+ '(package-selected-packages
+   (quote
+    (powershell markdown-mode org-plus-contrib color-theme color-theme-sanityinc-tomorrow use-package evil))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
