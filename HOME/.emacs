@@ -43,6 +43,9 @@
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
     (define-key evil-insert-state-map (kbd "M-x") 'execute-extended-command)
+	(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+	(evil-define-key 'normal org-mode-map (kbd "M-C-h") 'org-promote-subtree)
+	(evil-define-key 'normal org-mode-map (kbd "M-C-l") 'org-demote-subtree)
     (global-set-key (kbd "M-x") 'execute-extended-command))))
 
 
