@@ -43,7 +43,6 @@
     (define-key evil-normal-state-map (kbd "C-k") 'evil-window-up)
     (define-key evil-normal-state-map (kbd "C-l") 'evil-window-right)
     (define-key evil-insert-state-map (kbd "M-x") 'execute-extended-command)
-	(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
 	(evil-define-key 'normal org-mode-map (kbd "M-C-h") 'org-promote-subtree)
 	(evil-define-key 'normal org-mode-map (kbd "M-C-l") 'org-demote-subtree)
     (global-set-key (kbd "M-x") 'execute-extended-command))))
@@ -66,7 +65,7 @@
   (require 'ox-md)
   (require 'ox-confluence)
   (setq org-todo-keywords
-    '((sequence "TODO(t)" "IN-PROGRESS(i)" "ASSIGNED(a)" "WAITING(w)""|" "DONE(d)" "CANCELLED(c)")))
+    '((sequence "BACKLOG(l)" "READY(r)" "BLOCKED(b)" "WORKING(w)" "TESTING(t)" "|" "DONE(d)" "CANCELLED(c)" "ASSIGNED(a)")))
   (setq org-enforce-todo-dependencies t)
   (setq org-log-done (quote time))
   (setq org-log-redeadline (quote time))
@@ -115,6 +114,9 @@
 (use-package powershell
   :ensure t)
 
+(use-package kanban
+  :ensure t)
+
 (use-package puppet-mode
   :defer t)
 
@@ -134,7 +136,7 @@
  '(custom-enabled-themes (quote (sanityinc-tomorrow-night)))
  '(package-selected-packages
    (quote
-    (powershell markdown-mode org-plus-contrib color-theme color-theme-sanityinc-tomorrow use-package evil))))
+    (kanban powershell markdown-mode org-plus-contrib color-theme color-theme-sanityinc-tomorrow use-package evil))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
